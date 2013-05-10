@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/vendor/underscore.js"></script>
+    <script language="javascript" type="text/javascript" src="js/vendor/backbone.js"></script>
+    <script language="javascript" type="text/javascript" src="js/vendor/handlebars-1.0.0.beta.6.js"></script>
+    <script language="javascript" type="text/javascript" src="js/app/models/Post.js"></script>
+    <script language="javascript" type="text/javascript" src="js/app/collections/PostList.js"></script>
+    <script language="javascript" type="text/javascript" src="js/app/views/PostList.js"></script>
+    <script language="javascript" type="text/javascript" src="js/app/views/PostItem.js"></script>
+    <script language="javascript" type="text/javascript" src="js/app/views/Post.js"></script>
+    <script language="javascript" type="text/javascript" src="js/app/router/router.js"></script>
+    <script id="post-item-template" type="text/x-handlebars-template">
+      <a href="#{{id}}">{{title}}</a>
+    </script>
+    <script id="post-template" type="text/x-handlebars-template">
+      <h2>{{title}}</h2>
+      <p>{{content}}</p>
+    </script>
+    <script>
+      window.list = new PostList(<%= @final.to_json %>);
+    </script>
+    <script language="javascript" type="text/javascript" src="js/app/app.js"></script>
+  </head>
+  <body>
+    <h1><a href="#">Home</a></h1>
+    <ul id="post_list">
+    </ul>
+    <div id="post_container" style="display: none;">
+    </div>
+  </body>
+</html>
